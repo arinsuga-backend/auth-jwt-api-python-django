@@ -7,26 +7,26 @@ from rest_framework.serializers import BaseSerializer
 def authenticate(request):
     #GET Request
     if request.method == 'GET':
-        return get_auth(request=request)
+        return get_action(request=request)
 
     #POST Request
     if request.method == 'POST':
-        return post_auth(request=request)
+        return post_action(request=request)
 
     #PUT Request
     if request.method == 'PUT':
-        return put_auth(request=request)
+        return put_action(request=request)
 
     #PATCH Request
     if request.method == 'PATCH':
-        return patch_auth(request=request)
+        return patch_action(request=request)
     
     #DELETE Request
     if request.method == 'DELETE':
-        return delete_auth(request=request)
+        return delete_action(request=request)
 
-#GET method
-def get_auth(request):
+#GET Action
+def get_action(request):
     return Response({
         'method':'GET',
         'code':200,
@@ -38,8 +38,8 @@ def get_auth(request):
         }
     })
 
-#POST method
-def post_auth(request):
+#POST Action
+def post_action(request):
     return Response({
         'method':'POST',
         'code':200,
@@ -52,8 +52,8 @@ def post_auth(request):
         }
     })
 
-#PUT method
-def put_auth(request):
+#PUT Action
+def put_action(request):
     return Response({
         'method':'PUT',
         'code':200,
@@ -65,8 +65,8 @@ def put_auth(request):
         }
     })
 
-#PATCH method
-def patch_auth(request):
+#PATCH Action
+def patch_action(request):
     return Response({
         'method':'PATCH',
         'code':200,
@@ -78,8 +78,8 @@ def patch_auth(request):
         }
     })
 
-#DELETE method
-def delete_auth(request):
+#DELETE Action
+def delete_action(request):
     return Response({
         'method':'DELETE',
         'code':200,
