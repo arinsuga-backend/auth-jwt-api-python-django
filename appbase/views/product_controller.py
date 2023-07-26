@@ -1,7 +1,10 @@
 from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
+@api_view(['GET'])
 def all(request):
-    return JsonResponse({
+    return Response({
         'data':[
             {'name':'mazda', 'price':500000000},
             {'name':'toyota', 'price':700000000},

@@ -24,3 +24,4 @@ urlpatterns = [
     path('api/products', product_controller.all),
     path('api/auth', auth_controller.authenticate),
 ]
+  

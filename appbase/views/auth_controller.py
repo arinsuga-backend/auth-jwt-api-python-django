@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -28,7 +27,7 @@ def authenticate(request):
 
 #GET method
 def get_auth(request):
-    return JsonResponse({
+    return Response({
         'method':'GET',
         'code':200,
         'message':'GET - You are authenticated',
@@ -41,7 +40,7 @@ def get_auth(request):
 
 #POST method
 def post_auth(request):
-    return JsonResponse({
+    return Response({
         'method':'POST',
         'code':200,
         'message':'POST - You are authenticated',
@@ -55,7 +54,7 @@ def post_auth(request):
 
 #PUT method
 def put_auth(request):
-    return JsonResponse({
+    return Response({
         'method':'PUT',
         'code':200,
         'message':'PUT - You are authenticated',
@@ -68,7 +67,7 @@ def put_auth(request):
 
 #PATCH method
 def patch_auth(request):
-    return JsonResponse({
+    return Response({
         'method':'PATCH',
         'code':200,
         'message':'PATCH - You are authenticated',
@@ -81,7 +80,7 @@ def patch_auth(request):
 
 #DELETE method
 def delete_auth(request):
-    return JsonResponse({
+    return Response({
         'method':'DELETE',
         'code':200,
         'message':'DELETE - You are authenticated',
