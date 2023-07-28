@@ -1,5 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 from ..serializers.employee import EmployeeSerializer
 from ..models.employee import Employee
 
@@ -27,8 +28,14 @@ def employees(request):
 
 # GET Action
 def get_action(request):
-    serializer=EmployeeSerializer(Employee)
-    return Response({ 'data':serializer.data })
+    emps = Employee.objects.all()
+    serializer=EmployeeSerializer(emps, many=True)
+    return Response({
+        "method": "GET",
+        "status": status.HTTP_200_OK,
+        "message": "ok",
+        "result": serializer.data,
+        })
 
 # POST Action
 def post_action(request):

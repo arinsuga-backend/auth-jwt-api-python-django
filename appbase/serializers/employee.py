@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from ..models.employee import Employee
 
-class EmployeeSerializer(serializers.Serializer):
+class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Employee
-        fields='__All__'
+        model = Employee
+        fields = ['name', 'age', 'salary']
